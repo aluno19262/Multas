@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -10,12 +11,16 @@ namespace Multas.Models
     {
         public int ID { get; set; }
 
+        [Display(Name = "Infração")]
         public string Infracao { get; set; }
 
+        [Display(Name ="Local da multa")]
         public string LocalDaMulta { get; set; }
 
+        [Display(Name = "Valor da multa")]
         public decimal ValorMulta { get; set; }
 
+        [Display(Name = "Data da multa")]
         public DateTime DataDaMulta { get; set; }
 
         //*************************************
@@ -34,6 +39,6 @@ namespace Multas.Models
         //FK para a tabela das Viaturas
         [ForeignKey("Viatura")]
         public int ViaturaFK { get; set; }
-        public Viaturas Viatura { get; set; }
+        public virtual Viaturas Viatura { get; set; }
     }
 }

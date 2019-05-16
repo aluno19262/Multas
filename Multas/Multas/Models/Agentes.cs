@@ -8,6 +8,10 @@ namespace Multas.Models
 {
     public class Agentes
     {
+        public Agentes()
+        {
+            ListaDeMultas = new HashSet<Multas>();
+        }
         [Key]
         public int ID { get; set; }
         [Required (ErrorMessage ="O Nome é de preenchimento obrigatório.")]
@@ -22,6 +26,6 @@ namespace Multas.Models
         public string Fotografia { get; set; }
 
         //lista das multas associadas ao agente
-        public ICollection<Multas> ListaDeMultas { get; set; }
+        public virtual ICollection<Multas> ListaDeMultas { get; set; }
     }
 }

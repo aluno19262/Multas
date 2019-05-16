@@ -30,7 +30,7 @@ namespace Multas.Controllers
             Agentes agentes = db.Agentes.Find(id);
             if (agentes == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Index");
             }
             return View(agentes);
         }
