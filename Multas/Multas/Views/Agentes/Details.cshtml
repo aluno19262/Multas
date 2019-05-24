@@ -65,12 +65,12 @@
                 </td>
                 <td>
                     @* Link para um Condutor *@
-                    @*<a href="/condutores/details/@multa.Condutor.ID">@multa.Condutor.Nome</a>*@
+                    <a href="/condutores/details/@multa.Condutor.ID">@multa.Condutor.Nome</a>
                 </td>
                 <td>
                     @* Link para uma Viatura *@
                     @*<a href="/viaturas/details/@multa.Viatura.ID">@multa.Viatura.Matricula</a>*@
-                    @*@Html.ActionLink(multa.Viatura.Matricula, "Details","Viaturas", new { id = multa.Viatura.ID },null) |*@
+                    @Html.ActionLink(multa.Viatura.Matricula, "Details","Viaturas", new { id = multa.Viatura.ID },null) |
 
                 </td>
 

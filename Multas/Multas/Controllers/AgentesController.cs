@@ -44,11 +44,20 @@ namespace Multas.Controllers
         // POST: Agentes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// criaçao de um novo agente
+        /// </summary>
+        /// <param name="agentes"> recolhe os dados do nome e da esquadra do agente</param>
+        /// <param name="fotografia">representa a fotografia que identifica o agente</param>
+        /// <returns>devolve uma view</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nome,Esquadra,Fotografia")] Agentes agentes)
+        public ActionResult Create([Bind(Include = "Nome,Esquadra")] Agentes agentes,HttpPostedFileBase fotografia)
         {
-            if (ModelState.IsValid)
+
+
+
+            if (ModelState.IsValid)//valida se os dados fornecidos estao de acordo com as regras definidas no modelo
             {
                 db.Agentes.Add(agentes);
                 db.SaveChanges();

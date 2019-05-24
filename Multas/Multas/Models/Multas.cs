@@ -29,12 +29,12 @@ namespace Multas.Models
         //FK para a tabela dos agentes
         [ForeignKey("Agente")]
         public int AgenteFK {get; set; }
-        public Agentes Agente { get; set; }
+        public virtual Agentes Agente { get; set; }
 
         //FK para a tabela dos condutores
         [ForeignKey("Condutor")]
         public int CondutorFK { get; set; }
-        public Condutores Condutor { get; set; }
+        public virtual Condutores Condutor { get; set; }
 
         //FK para a tabela das Viaturas
         [ForeignKey("Viatura")]
